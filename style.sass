@@ -1,0 +1,146 @@
+$fondo: #202124
+$fondoFooter: #171717
+$color: #9aa0a6
+$text: white
+$barra: #5f6368
+$barraBtn: #303134
+@mixin orientacion($display:flex, $direcion:null, $justify:null, $aling:null, $columns:null, $place:null )
+    display: $display
+    justify-content: $justify
+    flex-direction: $direcion
+    align-items: $aling
+    grid-template-columns:  $columns
+    place-content: $place
+*
+    margin: 0
+    top: 0
+    box-sizing: border-box
+    font-size: 15px
+    font-family: 'Open Sans', sans-serif
+    text-decoration: none
+    color: $text
+body
+    background-color: $fondo
+    @include orientacion(flex, column, space-between)
+    width: 100vw
+    height: 100vh
+nav
+    @include orientacion(flex, null, end, center)
+    width: 100%
+    height: 4rem
+.CajaNav
+    @include orientacion(flex, null, end, center)
+    width: 100%
+    height: 100%
+    margin-right: 15px
+    &_cajaText
+        @include orientacion(flex, null, end, center)
+        width: 100%
+        margin-top: -.5rem
+        &_iconsNav
+            margin-left: 1rem
+            font-size: .89rem
+        &_iconsNav:hover
+            text-decoration-line: underline
+    &_iconsNav
+        margin-left: 1.7rem
+        &_perfil
+            width: 35px
+            height: 35px
+            border-radius: 50%
+section
+    @include orientacion(flex, column, center, center)
+    width: 100%
+.padre
+    @include orientacion(flex, column,center, center)
+    width: 50%
+    &_img
+        margin-bottom: 1rem
+    &_cajaInput
+        width: 60%
+        height: 3.2rem
+        margin: 1.5rem 0rem
+        position: relative
+        &_input
+            width: 100%
+            height: 100%
+            background-color: transparent
+            border: 1px solid $barra
+            border-radius: 50px
+            outline: 0px
+            padding: 0px 55px
+        &_input:focus, &_input:hover
+            background-color: $barraBtn
+            border: none
+        &_lupa
+            position: absolute
+            font-size: 1.5rem
+            margin: 12px 15px
+            color: #9AA0A6
+        &_mic
+            position: absolute
+            color: #9AA0A6
+            margin: 1px 470px
+            padding: 12px 4px
+            width: 35px
+            height: 47px
+        &_camera
+            position: absolute
+            color: #9AA0A6
+            margin: 1px 510px
+            padding: 12px 4px
+            width: 35px
+            height: 47px
+    &_cajaBtn
+        @include orientacion(flex, null, center, center)
+        width: 50%
+        height: 2.7rem
+        margin: 0.5rem 
+        &_btn
+            border: 1px solid $barraBtn
+            background-color: $barraBtn
+            border-radius: 5px
+            padding: .5rem 1rem
+            margin: 0rem .5rem
+        &_btn:hover
+            border: 1px solid $barra
+footer
+    @include orientacion(flex, column)
+    width: 100%
+    height: 5.5rem
+    margin-top: 9%
+
+.cajaFooter
+    width: 100%
+    height: 100%
+    &_cajaSuperior
+        @include orientacion(flex,null,start,center)
+        padding: 0px 30px
+        width: 100%
+        height: 46.2%
+        background: $fondoFooter
+        margin: 1.5px 0px
+        &_text
+            color: #828382
+    &_cajaInferior
+        @include orientacion(flex, null , space-between , center)
+        height: 49%
+        margin: 2px 0px
+        padding: 0px 30px
+        background-color: $fondoFooter
+        &_izquierda
+            @include orientacion(flex, null, center, center)
+        &_izquierda a
+            padding: 10px 20px 10px 0px
+            font-size: .9rem
+            color: #828382
+        &_izquierda a:hover
+            text-decoration-line: underline
+        &_derecha
+            @include orientacion(flex, null, center, center)
+        &_derecha a
+            padding: 10px 0px 10px 20px
+            font-size: .9rem
+            color: #828382
+        &_derecha a:hover
+            text-decoration-line: underline
